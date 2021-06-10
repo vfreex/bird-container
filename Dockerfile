@@ -19,4 +19,4 @@ COPY --from=builder /tmp/bird2-install/ /
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libssh-4 libreadline7 \
     && rm -rf /var/lib/apt/lists/*
-CMD ["/usr/local/sbin/bird", "-f"]
+CMD ["/usr/local/sbin/bird", "-f", "-s", "/run/bird/bird.ctl"]

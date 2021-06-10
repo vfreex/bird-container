@@ -1,9 +1,10 @@
 version: "2.2"
 services:
     bird:
-        image: local/bird
+        image: docker.io/yuxzhu/bird:latest
         network_mode: host
         privileged: true
+        tty: true
         volumes:
         - /etc/bird:/etc/bird:ro
-        - /run/bird:/run/bird:ro
+        - /run/bird:/run/bird:rw
